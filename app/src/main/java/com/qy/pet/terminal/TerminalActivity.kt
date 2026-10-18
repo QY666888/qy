@@ -45,7 +45,7 @@ class TerminalActivity : ComponentActivity() {
                     }
 
                     LaunchedEffect(Unit) {
-                        log.add("交互式 root shell（输入命令回车；上下键翻历史）")
+                        log.add("交互式 root shell：普通命令和 read 数字菜单可用；到提示处直接输入数字回车")
                         if (!autoCmd.isNullOrBlank()) RootShell.send(autoCmd)
                     }
 
