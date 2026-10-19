@@ -458,15 +458,7 @@ class Pet(
 
     inner class PetCanvas(ctx: Context) : View(ctx), Drawable.Callback {
         private val bodyPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = 0xFF58B96E.toInt()
-            style = Paint.Style.FILL
-        }
-        private val eyePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = 0xFFF6FFF8.toInt()
-            style = Paint.Style.FILL
-        }
-        private val pupilPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = 0xFF17331F.toInt()
+            color = 0xFFB8C4CC.toInt()
             style = Paint.Style.FILL
         }
 
@@ -504,19 +496,14 @@ class Pet(
                 d.setBounds(0, 0, width, height)
                 d.draw(canvas)
             } else {
-                drawPlaceholderFrog(canvas, w, h)
+                drawMissingAssetPlaceholder(canvas, w, h)
             }
             canvas.restore()
         }
 
-        private fun drawPlaceholderFrog(canvas: Canvas, w: Float, h: Float) {
+        private fun drawMissingAssetPlaceholder(canvas: Canvas, w: Float, h: Float) {
             val body = RectF(w * 0.18f, h * 0.28f, w * 0.82f, h * 0.96f)
-            canvas.drawOval(body, bodyPaint)
-            val eyeR = w * 0.07f
-            canvas.drawCircle(w * 0.34f, h * 0.30f, eyeR, eyePaint)
-            canvas.drawCircle(w * 0.66f, h * 0.30f, eyeR, eyePaint)
-            canvas.drawCircle(w * 0.36f, h * 0.31f, eyeR * 0.38f, pupilPaint)
-            canvas.drawCircle(w * 0.64f, h * 0.31f, eyeR * 0.38f, pupilPaint)
+            canvas.drawRoundRect(body, w * 0.18f, h * 0.12f, bodyPaint)
         }
 
         // Drawable.Callback：动画帧推进时重绘

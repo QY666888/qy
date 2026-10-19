@@ -85,7 +85,10 @@ class MainActivity : Activity() {
         }
 
         findViewById<Button>(R.id.btnTerminal).setOnClickListener {
-            startActivity(Intent(this, TerminalActivity::class.java))
+            startActivity(
+                Intent(this, TerminalActivity::class.java)
+                    .putExtra("run_cmd", "/system/bin/sh")
+            )
         }
 
         findViewById<Button>(R.id.btnFiles).setOnClickListener {

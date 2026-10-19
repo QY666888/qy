@@ -47,7 +47,7 @@ class FileBrowserActivity : Activity() {
                 load()
             } else if (name.endsWith(".sh", true) || name.endsWith(".command", true)) {
                 val dir = File(full).parent ?: "/"
-                val cmd = "cd ${RootManager.quote(dir)} && sh ${RootManager.quote(File(full).name)}; exit"
+                val cmd = "cd ${RootManager.quote(dir)} && /system/bin/sh ${RootManager.quote(File(full).name)}"
                 startActivity(Intent(this, TerminalActivity::class.java).putExtra("run_cmd", cmd))
             }
         }
