@@ -3,9 +3,10 @@ build/
 .gradle/
 local.properties
 
-# 生成出来的素材与配置（可由 tools/fetch-and-transcode.ps1 重现）
+# 生成出来的素材（可由 tools/fetch-and-transcode.ps1 重现）
 app/src/main/assets/webp/
-app/src/main/assets/pet-config.json
+# 本仓库自带本地占位 pet-config.json，需要提交；上游生成版本不覆盖。
+!app/src/main/assets/pet-config.json
 anim-map.json
 
 # 打包产物

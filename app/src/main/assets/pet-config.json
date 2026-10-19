@@ -1,0 +1,36 @@
+{
+  "pets": [
+    {
+      "id": "main",
+      "name": "奶蛙",
+      "size": 150,
+      "position": {
+        "corner": "bottom-right",
+        "marginX": 24,
+        "marginY": 120
+      }
+    }
+  ],
+  "names": {
+    "placeholder": "占位待机"
+  },
+  "animations": {
+    "idle": ["placeholder"],
+    "turn": [],
+    "drag": [],
+    "clicks": ["placeholder"],
+    "moves": {
+      "default": { "minDist": 60, "maxDist": 240, "margin": 20 },
+      "actions": []
+    },
+    "categories": []
+  },
+  "animationWeights": { "idle": 10, "turn": 5, "move": 5 },
+  "physics": {
+    "gravity": 1400,
+    "restitution": 0.78,
+    "groundFriction": 2.5,
+    "ceilingBounce": true,
+    "throwPower": 1.0
+  }
+}
