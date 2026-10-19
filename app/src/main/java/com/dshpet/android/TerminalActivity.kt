@@ -44,7 +44,7 @@ class TerminalActivity : Activity() {
         logView = TextView(this).apply {
             setTextColor(0xFFD7E0E8.toInt())
             textSize = 13f
-            setTypeface(typeface, android.graphics.Typeface.MONOSPACE)
+            typeface = android.graphics.Typeface.MONOSPACE
         }
         input = EditText(this).apply {
             hint = "输入命令或菜单选项，回车发送"

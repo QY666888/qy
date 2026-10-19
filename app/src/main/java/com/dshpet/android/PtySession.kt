@@ -30,9 +30,10 @@ class PtySession(
         handle = nativeStart()
         if (handle <= 0) return false
         val masterFd = (handle and 0xffffffffL).toInt()
-        pfd = ParcelFileDescriptor.adoptFd(masterFd)
-        output = pfd?.fileOutputStream
-        input = pfd?.fileInputStream
+        val p = ParcelFileDescriptor.adoptFd(masterFd)
+        pfd = p
+        output = FileOutputStream(p.fileDescriptor)
+        input = FileInputStream(p.fileDescriptor)
         alive = true
 
         reader = Thread {
