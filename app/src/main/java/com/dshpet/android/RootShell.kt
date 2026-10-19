@@ -28,8 +28,12 @@ object RootShell {
         }
     }
 
-    fun addListener(l: (String) -> Unit) = synchronized(listeners) { listeners.add(l) }
-    fun removeListener(l: (String) -> Unit) = synchronized(listeners) { listeners.remove(l) }
+    fun addListener(l: (String) -> Unit) {
+        synchronized(listeners) { listeners.add(l) }
+    }
+    fun removeListener(l: (String) -> Unit) {
+        synchronized(listeners) { listeners.remove(l) }
+    }
 
     private fun emit(line: String) {
         synchronized(listeners) {

@@ -2,6 +2,7 @@ package com.dshpet.android
 
 import android.app.Activity
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -56,7 +57,7 @@ class TerminalActivity : Activity() {
         val scroll = ScrollView(this)
         scroll.addView(logView)
         root.addView(statusView)
-        root.addView(scroll, LinearLayout.LayoutParams(MATCH_PARENT, 0, 1f))
+        root.addView(scroll, LinearLayout.LayoutParams(ViewGroup.MATCH_PARENT, 0, 1f))
         root.addView(input)
         root.addView(send)
         setContentView(root)
